@@ -8,10 +8,6 @@ import distribcaffè18.RestoEvent;
 import distribcaffè18.RitiroEvent;
 import distribcaffè18.SoldiEvent;
 
-/**
- *
- * @author Luca Lezzerini
- */
 public class DistributoreCaffèUI extends javax.swing.JFrame implements Automabile {
 
     // Associo alla UI un automa che gestisce lo stato del distributore di caffè
@@ -88,6 +84,7 @@ public class DistributoreCaffèUI extends javax.swing.JFrame implements Automabi
         jButtonCaffèPronto = new javax.swing.JButton();
         jButtonCaffèRitirato = new javax.swing.JButton();
         jLabelMessaggi = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -157,6 +154,8 @@ public class DistributoreCaffèUI extends javax.swing.JFrame implements Automabi
         jLabelMessaggi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelMessaggi.setText("jLabel1");
 
+        jTextField1.setText("jTextField1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,27 +172,36 @@ public class DistributoreCaffèUI extends javax.swing.JFrame implements Automabi
                         .addComponent(jButton1Euro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton2Euro))
-                    .addComponent(jButtonResto)
-                    .addComponent(jButtonCaffè)
                     .addComponent(jButtonCaffèPronto)
                     .addComponent(jButtonCaffèRitirato)
-                    .addComponent(jLabelMessaggi, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelMessaggi, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonResto)
+                            .addComponent(jButtonCaffè))
+                        .addGap(177, 177, 177)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10Cent)
-                    .addComponent(jButton20Cent)
-                    .addComponent(jButton50Cent)
-                    .addComponent(jButton1Euro)
-                    .addComponent(jButton2Euro))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonResto)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonCaffè)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton10Cent)
+                            .addComponent(jButton20Cent)
+                            .addComponent(jButton50Cent)
+                            .addComponent(jButton1Euro)
+                            .addComponent(jButton2Euro))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonResto)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonCaffè))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonCaffèPronto)
                 .addGap(18, 18, 18)
@@ -288,5 +296,6 @@ public class DistributoreCaffèUI extends javax.swing.JFrame implements Automabi
     private javax.swing.JButton jButtonCaffèRitirato;
     private javax.swing.JButton jButtonResto;
     private javax.swing.JLabel jLabelMessaggi;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
