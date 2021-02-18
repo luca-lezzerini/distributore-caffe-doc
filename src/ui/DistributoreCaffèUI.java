@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ui;
 
+import distribcaffè18.Automabile;
 import distribcaffè18.CaffèEvent;
 import distribcaffè18.CaffèProntoEvent;
 import distribcaffè18.DistributoreCaffèAutoma;
@@ -16,16 +12,61 @@ import distribcaffè18.SoldiEvent;
  *
  * @author Luca Lezzerini
  */
-public class DistributoreCaffèUI extends javax.swing.JFrame {
+public class DistributoreCaffèUI extends javax.swing.JFrame implements Automabile {
 
     // Associo alla UI un automa che gestisce lo stato del distributore di caffè
-    DistributoreCaffèAutoma automa = new DistributoreCaffèAutoma();
+    DistributoreCaffèAutoma automa;
+    
+    @Override
+    public void entraStatoAttesa() {
+        jButton10Cent.setEnabled(true);
+        jButton20Cent.setEnabled(true);
+        jButton50Cent.setEnabled(true);
+        jButton1Euro.setEnabled(true);
+        jButton2Euro.setEnabled(true);
+        jButtonCaffè.setEnabled(true);
+        jButtonCaffèPronto.setEnabled(false);
+        jButtonCaffèRitirato.setEnabled(false);
+        jButtonResto.setEnabled(true);
+    }
+    
+    @Override
+    public void entraStatoErogazione() {
+        jButton10Cent.setEnabled(false);
+        jButton20Cent.setEnabled(false);
+        jButton50Cent.setEnabled(false);
+        jButton1Euro.setEnabled(false);
+        jButton2Euro.setEnabled(false);
+        jButtonCaffè.setEnabled(false);
+        jButtonCaffèPronto.setEnabled(true);
+        jButtonCaffèRitirato.setEnabled(false);
+        jButtonResto.setEnabled(false);
+    }
+    
+    @Override
+    public void entraStatoPronto() {
+        jButton10Cent.setEnabled(false);
+        jButton20Cent.setEnabled(false);
+        jButton50Cent.setEnabled(false);
+        jButton1Euro.setEnabled(false);
+        jButton2Euro.setEnabled(false);
+        jButtonCaffè.setEnabled(false);
+        jButtonCaffèPronto.setEnabled(false);
+        jButtonCaffèRitirato.setEnabled(true);
+        jButtonResto.setEnabled(false);
+    }
+    
+    @Override
+    public void stampaMessaggio(String msg) {
+        jLabelMessaggi.setText(msg);
+    }
 
     /**
      * Creates new form DistributoreCaffèUI
      */
     public DistributoreCaffèUI() {
         initComponents();
+        automa = new DistributoreCaffèAutoma(this);
     }
 
     /**
@@ -137,7 +178,7 @@ public class DistributoreCaffèUI extends javax.swing.JFrame {
                     .addComponent(jButtonCaffèPronto)
                     .addComponent(jButtonCaffèRitirato)
                     .addComponent(jLabelMessaggi, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 131, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +200,7 @@ public class DistributoreCaffèUI extends javax.swing.JFrame {
                 .addComponent(jButtonCaffèRitirato)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelMessaggi)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();

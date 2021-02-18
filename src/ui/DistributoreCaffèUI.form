@@ -42,7 +42,7 @@
                   <Component id="jButtonCaffèRitirato" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelMessaggi" alignment="0" min="-2" pref="718" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="131" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -67,7 +67,7 @@
               <Component id="jButtonCaffèRitirato" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabelMessaggi" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="280" max="32767" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
